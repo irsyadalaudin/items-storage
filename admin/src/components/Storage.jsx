@@ -8,7 +8,7 @@ const Storage = () => {
                     <input type='text' />
                 </div>
                 <div>
-                    <label htmlFor='Nama Barang'>Nama barang :</label>
+                    <label htmlFor='Nama Barang'>Nama barang:</label>
                     <input type='text' />
                 </div>
                 <div>
@@ -31,7 +31,7 @@ const Storage = () => {
                     <input type='text' />
                 </div>
                 <div>
-                    <label htmlFor='Nama Barang'>Nama barang :</label>
+                    <label htmlFor='Nama Barang'>Nama barang:</label>
                     <input type='text' />
                 </div>
                 <div>
@@ -54,7 +54,7 @@ const Storage = () => {
                     <input type='text' />
                 </div>
                 <div>
-                    <label htmlFor='Nama Customer'>Nama Customer :</label>
+                    <label htmlFor='Nama Customer'>Nama Customer:</label>
                     <input type='text' />
                 </div>
                 <div>
