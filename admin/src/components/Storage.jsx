@@ -4,6 +4,10 @@ const Storage = () => {
             <form>
                 <h2>Data barang masuk</h2>
                 <div>
+                    <label htmlFor='Tanggal'>Tanggal:</label>
+                    <input type='text' />
+                </div>
+                <div>
                     <label htmlFor='Nama Barang'>Nama barang :</label>
                     <input type='text' />
                 </div>
@@ -23,6 +27,10 @@ const Storage = () => {
             <div>
                 <h2>Data barang keluar</h2>
                 <div>
+                    <label htmlFor='Tanggal'>Tanggal:</label>
+                    <input type='text' />
+                </div>
+                <div>
                     <label htmlFor='Nama Barang'>Nama barang :</label>
                     <input type='text' />
                 </div>
@@ -41,6 +49,10 @@ const Storage = () => {
             </div>
             <div>
                 <h2>Data customer</h2>
+                <div>
+                    <label htmlFor='Tanggal'>Tanggal:</label>
+                    <input type='text' />
+                </div>
                 <div>
                     <label htmlFor='Nama Customer'>Nama Customer :</label>
                     <input type='text' />
