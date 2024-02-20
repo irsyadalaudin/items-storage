@@ -24,7 +24,7 @@ const Storage = () => {
                     <input type='text' />
                 </div>
             </form>
-            <div>
+            <form>
                 <h2>Data barang keluar</h2>
                 <div>
                     <label htmlFor='Tanggal'>Tanggal:</label>
@@ -46,8 +46,8 @@ const Storage = () => {
                     <label htmlFor='Jumlah'>Jumlah:</label>
                     <input type='text' />
                 </div>
-            </div>
-            <div>
+            </form>
+            <form>
                 <h2>Data customer</h2>
                 <div>
                     <label htmlFor='Tanggal'>Tanggal:</label>
@@ -69,7 +69,7 @@ const Storage = () => {
                     <label htmlFor='Jumlah'>Jumlah:</label>
                     <input type='text' />
                 </div>
-            </div>
+            </form>
         </>
     )
 }
