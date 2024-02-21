@@ -16,10 +16,6 @@ const Storage = () => {
                     <input type='text' />
                 </div>
                 <div>
-                    <label htmlFor='Jenis'>Jenis:</label>
-                    <input type='text' />
-                </div>
-                <div>
                     <label htmlFor='Jumlah'>Jumlah:</label>
                     <input type='text' />
                 </div>
@@ -39,10 +35,6 @@ const Storage = () => {
                 </div>
                 <div>
                     <label htmlFor='Harga Satuan'>Harga Satuan:</label>
-                    <input type='text' />
-                </div>
-                <div>
-                    <label htmlFor='Jenis'>Jenis:</label>
                     <input type='text' />
                 </div>
                 <div>
