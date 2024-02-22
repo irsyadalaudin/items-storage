@@ -26,7 +26,7 @@ const Storage = () => {
         console.log('Nama Barang:', namaBarang)
         console.log('Harga Satuan:', hargaSatuan)
         console.log('Jumlah:', jumlah)
-    
+
         setTanggal('')
         setNamaBarang('')
         setHargaSatuan('')
@@ -39,7 +39,7 @@ const Storage = () => {
                 <h2>Data barang masuk</h2>
                 <div>
                     <label htmlFor='Tanggal'>Tanggal:</label>
-                    <input type='text' value={tanggal} onChange={(e) => setTanggal(e.target.value)} />
+                    <input type='number' value={tanggal} onChange={(e) => setTanggal(e.target.value)} />
                 </div>
                 <div>
                     <label htmlFor='Nama Barang'>Nama barang:</label>
@@ -51,7 +51,7 @@ const Storage = () => {
                 </div>
                 <div>
                     <label htmlFor='Jumlah'>Jumlah:</label>
-                    <input type='text' value={jumlah} onChange={(e) => setJumlah(e.target.value)} />
+                    <input type='number' value={jumlah} onChange={(e) => setJumlah(e.target.value)} />
                 </div>
                 <div>
                     <button type='button' onClick={handleClick}>enter</button>
