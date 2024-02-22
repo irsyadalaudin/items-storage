@@ -33,6 +33,12 @@ const Storage = () => {
 		setJumlah('')
 	}
 
+	const handleDelete = (index) => {
+		const updatedItems = [...items]
+		updatedItems.splice(index, 1)
+		setItems(updatedItems)
+	}
+
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -66,6 +72,7 @@ const Storage = () => {
 					<li>{item.namaBarang}</li>
 					<li>{item.hargaSatuan}</li>
 					<li>{item.jumlah}</li>
+					<button onClick={() => handleDelete(index)}>delete</button>
 				</ul>
 				))}
 			</div>
