@@ -1,41 +1,42 @@
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const Storage = () => {
     const [tanggal, setTanggal] = useState('')
     const [namaBarang, setNamaBarang] = useState('')
     const [hargaSatuan, setHargaSatuan] = useState('')
     const [jumlah, setJumlah] = useState('')
+	const [items, setItems] = useState([])
 
-    useEffect(() => {
-        const handleKeyPress = (e) => {
-            if (e.key === 'Enter') {
-                handleClick()
-            }
-        }
-        
-        document.addEventListener('keydown', handleKeyPress)
+	const handleSubmit = (e) => {
+		e.preventDefault()    // MENCEGAH RELOAD HALAMAN
 
-        return() => {
-            document.removeEventListener('keydown', handleKeyPress)
-        }
-    }, [tanggal, namaBarang, hargaSatuan, jumlah])
+		// MEMBUAT OBJEK BARU UNTUK ITEM YANG DIINPUT
+		const newItem = {
+			tanggal,
+			namaBarang,
+			hargaSatuan,
+			jumlah
+		}
 
-
-    const handleClick = () => {
-        console.log('Tanggal:', tanggal)
+		console.log('Tanggal:', tanggal)
         console.log('Nama Barang:', namaBarang)
         console.log('Harga Satuan:', hargaSatuan)
         console.log('Jumlah:', jumlah)
 
-        setTanggal('')
-        setNamaBarang('')
-        setHargaSatuan('')
-        setJumlah('')
-    }
+		// MENAMBAHKAN ITEM BARU KE DALAM ARRAY ITEMS
+		setItems([...items, newItem])
+
+		// RESET FORM INPUT, SETELAH MENAMBAHKAN ITEM BARU KE DALAM ARAY ITEMS
+		setTanggal('')
+		setNamaBarang('')
+		setHargaSatuan('')
+		setJumlah('')
+	}
 
     return (
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h2>Data barang masuk</h2>
                 <div>
                     <label htmlFor='Tanggal'>Tanggal:</label>
@@ -54,9 +55,22 @@ const Storage = () => {
                     <input type='number' value={jumlah} onChange={(e) => setJumlah(e.target.value)} />
                 </div>
                 <div>
-                    <button type='button' onClick={handleClick}>enter</button>
+                    {/* <button type='submit' onClick={handleClick}>enter</button> */}
+					<button type='submit'>enter</button>
                 </div>
             </form>
+
+			{/* MENAMPILKAN DATA BARANG */}
+			<div>
+				{items.map((item, index) => (
+				<ul key={index}>
+					<li>{item.tanggal}</li>
+					<li>{item.namaBarang}</li>
+					<li>{item.hargaSatuan}</li>
+					<li>{item.jumlah}</li>
+				</ul>
+				))}
+			</div>
         </>
     )
 }
