@@ -54,7 +54,6 @@ const Storage = () => {
                     <input type='number' value={jumlah} onChange={(e) => setJumlah(e.target.value)} />
                 </div>
                 <div>
-                    {/* <button type='submit' onClick={handleClick}>enter</button> */}
 					<button type='submit'>enter</button>
                 </div>
             </form>
