@@ -1,4 +1,6 @@
-import { useRef, useState } from 'react'
+// import { useRef, useState } from 'react'
+import { useState } from 'react'
+import DatePickerInput from './DatePickerInput'
 
 const Storage = () => {
     const [tanggal, setTanggal] = useState('')
@@ -6,8 +8,13 @@ const Storage = () => {
     const [hargaSatuan, setHargaSatuan] = useState('')
     const [jumlah, setJumlah] = useState('')
 	const [items, setItems] = useState([])
-	const [errorMessage, setErrorMessage] = useState('')
-	const inputRef = useRef('')
+	// const [errorMessage, setErrorMessage] = useState('')
+	const [selectedDate, setSelectedDate] = useState('')
+	// const inputRef = useRef('')
+
+	const handleDateChange = (date) => {
+		setSelectedDate(date)
+	}
 
 	// const handleDateChange = (e) => {
 	// 	const inputDate = e.target.value
@@ -22,7 +29,7 @@ const Storage = () => {
 	// 		setErrorMessage('Format tanggal harus DD/MM/YYYY')
 	// 	}
 	// }
-
+	/*
 	const handleDateChange = () => {
 		const inputDate = inputRef.current.value
 
@@ -35,7 +42,7 @@ const Storage = () => {
 		} else {
 			setErrorMessage('Format tanggal harus DD/MM/YYYY')
 		}
-	}
+	}*/
 
 	const handleSubmit = (e) => {
 		e.preventDefault()    // MENCEGAH RELOAD HALAMAN
@@ -73,13 +80,18 @@ const Storage = () => {
         <>
             <form onSubmit={handleSubmit}>
                 <h2>Data barang masuk</h2>
-                <div>
+				<DatePickerInput
+					selectedDate={selectedDate}
+					handleDateChange={handleDateChange}
+				/>
+
+                {/* <div>
                     <label htmlFor='Tanggal'>Tanggal:</label>
                     {/* <input 
 						type='number' 
 						value={tanggal} 
 						onChange={handleDateChange} 
-					/> */}
+					/> 
 					<input 
 						type='number' 
 						ref={inputRef}
@@ -88,7 +100,7 @@ const Storage = () => {
 						placeholder='DD/MM/YYYY' 
 					/>
 					{errorMessage}
-                </div>
+                </div> */}
 
                 <div>
                     <label htmlFor='Nama Barang'>Nama barang:</label>
