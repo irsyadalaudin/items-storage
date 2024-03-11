@@ -67,17 +67,17 @@ const Storage = () => {
 			{/* MENAMPILKAN DATA BARANG */}
 			<div>
 				{items.map((item, index) => (
-				<ul key={index}>
-					<li>{item.tanggal}</li>
-					<li>{item.namaBarang}</li>
-					<li>{item.hargaSatuan}</li>
-					<li>{item.jumlah}</li>
-					<button onClick={() => handleDelete(index)}>delete</button>
-				</ul>
+					<ul key={index}>
+						<li>{item.tanggal}</li>
+						<li>{item.namaBarang}</li>
+						<li>{item.hargaSatuan}</li>
+						<li>{item.jumlah}</li>
+						<button onClick={() => handleDelete(index)}>delete</button>
+					</ul>
 				))}
 			</div>
         </>
-    )
+	)
 }
 
 export default Storage
