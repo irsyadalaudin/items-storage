@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
 const DatePickerInput = () => {
-    const [startDate, setStartDate] =useState(new Date())
+    const [startDate, setStartDate] = useState(new Date())
 
     return (
         <DatePicker
