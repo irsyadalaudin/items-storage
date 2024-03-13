@@ -16,34 +16,6 @@ const Storage = () => {
 		setSelectedDate(date)
 	}
 
-	// const handleDateChange = (e) => {
-	// 	const inputDate = e.target.value
-
-	// 	// FORMAT YANG DIGUNAKAN DD/MM/YYYY
-	// 	const regex = /^\d{2}\/\d{2}\/\d{4}$/  // VALIDASI FORMAT DENGAN REGEX
-
-	// 	if (regex.test(inputDate)) {
-	// 		setTanggal(inputDate)
-	// 		setErrorMessage('')
-	// 	} else {
-	// 		setErrorMessage('Format tanggal harus DD/MM/YYYY')
-	// 	}
-	// }
-	/*
-	const handleDateChange = () => {
-		const inputDate = inputRef.current.value
-
-		// FORMAT YANG DIGUNAKAN DD/MM/YYYY
-		const regex = /^\d{2}\/\d{2}\/\d{4}$/  // VALIDASI FORMAT DENGAN REGEX
-
-		if (regex.test(inputDate)) {
-			setTanggal(inputDate)
-			setErrorMessage('')
-		} else {
-			setErrorMessage('Format tanggal harus DD/MM/YYYY')
-		}
-	}*/
-
 	const handleSubmit = (e) => {
 		e.preventDefault()    // MENCEGAH RELOAD HALAMAN
 
@@ -84,23 +56,6 @@ const Storage = () => {
 					selectedDate={selectedDate}
 					handleDateChange={handleDateChange}
 				/>
-
-                {/* <div>
-                    <label htmlFor='Tanggal'>Tanggal:</label>
-                    {/* <input 
-						type='number' 
-						value={tanggal} 
-						onChange={handleDateChange} 
-					/> 
-					<input 
-						type='number' 
-						ref={inputRef}
-						defaultValue={tanggal}
-						onBlur={handleDateChange}
-						placeholder='DD/MM/YYYY' 
-					/>
-					{errorMessage}
-                </div> */}
 
                 <div>
                     <label htmlFor='Nama Barang'>Nama barang:</label>
