@@ -89,7 +89,7 @@ const Storage = () => {
 				{items.map((item, index) => (
 					<ul key={index}>
 						{/* <li>{item.tanggal}</li> */}
-						<li>{item.tanggal.toLocaleString()}</li>    {/* MENGGUNALAN toLocaleString() LANGSUNG PADA selectedDate */}
+						<li>{item.tanggal.toLocaleString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric'})}</li>    {/* MENGGUNALAN toLocaleString() LANGSUNG PADA selectedDate */}
 						<li>{item.namaBarang}</li>
 						<li>{item.hargaSatuan}</li>
 						<li>{item.jumlah}</li>
