@@ -1,4 +1,3 @@
-// import { useRef, useState } from 'react'
 import { useState } from 'react'
 import DatePickerInput from './DatePickerInput'
 
@@ -8,9 +7,7 @@ const Storage = () => {
     const [hargaSatuan, setHargaSatuan] = useState('')
     const [jumlah, setJumlah] = useState('')
 	const [items, setItems] = useState([])
-	// const [errorMessage, setErrorMessage] = useState('')
 	const [selectedDate, setSelectedDate] = useState('')
-	// const inputRef = useRef('')
 
 	const handleDateChange = (date) => {
 		setSelectedDate(date)
