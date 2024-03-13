@@ -7,7 +7,8 @@ const Storage = () => {
     const [hargaSatuan, setHargaSatuan] = useState('')
     const [jumlah, setJumlah] = useState('')
 	const [items, setItems] = useState([])
-	const [selectedDate, setSelectedDate] = useState('')
+	// const [selectedDate, setSelectedDate] = useState('')
+	const [selectedDate, setSelectedDate] = useState(new Date())    // INISIALISASI selectedDate DENGAN TANGGAL SAAT INI
 
 	const handleDateChange = (date) => {
 		setSelectedDate(date)
@@ -18,7 +19,7 @@ const Storage = () => {
 
 		// MEMBUAT OBJEK BARU UNTUK ITEM YANG DIINPUT
 		const newItem = {
-			tanggal,
+			tanggal : selectedDate,    // MENGGUNAKAN selectedDate SEBAGAI TANGGAL
 			namaBarang,
 			hargaSatuan,
 			jumlah
@@ -87,7 +88,8 @@ const Storage = () => {
 			<div>
 				{items.map((item, index) => (
 					<ul key={index}>
-						<li>{item.tanggal}</li>
+						{/* <li>{item.tanggal}</li> */}
+						<li>{item.tanggal.toLocaleString()}</li>    {/* MENGGUNALAN toLocaleString() LANGSUNG PADA selectedDate */}
 						<li>{item.namaBarang}</li>
 						<li>{item.hargaSatuan}</li>
 						<li>{item.jumlah}</li>
