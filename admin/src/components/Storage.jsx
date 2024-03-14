@@ -40,10 +40,16 @@ const Storage = () => {
 		setJumlah('')
 	}
 
+	// UNTUK MENGHAPUS 1 ITEM
 	const handleDelete = (index) => {
 		const updatedItems = [...items]
 		updatedItems.splice(index, 1)
 		setItems(updatedItems)
+	}
+
+	// UNTUK MENGHAPUS SELURUH ITEM
+	const handleDeleteAll = () => {
+		setItems([])
 	}
 
     return (
@@ -87,14 +93,17 @@ const Storage = () => {
 			{/* MENAMPILKAN DATA BARANG */}
 			<div>
 				{items.map((item, index) => (
-					<ul key={index}>
-						{/* <li>{item.tanggal}</li> */}
-						<li>{item.tanggal.toLocaleString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric'})}</li>    {/* MENGGUNALAN toLocaleString() LANGSUNG PADA selectedDate */}
-						<li>{item.namaBarang}</li>
-						<li>{item.hargaSatuan}</li>
-						<li>{item.jumlah}</li>
-						<button onClick={() => handleDelete(index)}>delete</button>
-					</ul>
+					<>
+						<ul key={index}>
+							{/* <li>{item.tanggal}</li> */}
+							<li>{item.tanggal.toLocaleString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric'})}</li>    {/* MENGGUNALAN toLocaleString() LANGSUNG PADA selectedDate */}
+							<li>{item.namaBarang}</li>
+							<li>{item.hargaSatuan}</li>
+							<li>{item.jumlah}</li>
+							<button onClick={() => handleDelete(index)}>delete</button>
+						</ul>
+						<button onClick={() => handleDeleteAll()}>delete All</button>
+					</>
 				))}
 			</div>
         </>
