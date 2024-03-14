@@ -40,6 +40,7 @@ const Storage = () => {
 		setJumlah('')
 	}
 
+
 	// UNTUK MENGHAPUS 1 ITEM
 	const handleDelete = (index) => {
 		const updatedItems = [...items]
