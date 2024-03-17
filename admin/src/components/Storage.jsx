@@ -89,10 +89,10 @@ const Storage = () => {
             </form>
 
 			{/* MENAMPILKAN DATA BARANG */}
-			<div>
+			<>
 				{items.map((item) => (
-					<>
-						<ul key={item.id}>
+					<div key={item.id}>
+						<ul>
 							<li>{item.tanggal.toLocaleString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric'})}</li>    {/* MENGGUNALAN toLocaleString() LANGSUNG PADA selectedDate */}
 							<li>{item.namaBarang}</li>
 							<li>{item.hargaSatuan}</li>
@@ -101,9 +101,9 @@ const Storage = () => {
 							<button onClick={() => handleDelete(item.id)}>delete</button>
 						</ul>
 						<button onClick={() => handleDeleteAll()}>delete All</button>
-					</>
+					</div>
 				))}
-			</div>
+			</>
         </>
 	)
 }
