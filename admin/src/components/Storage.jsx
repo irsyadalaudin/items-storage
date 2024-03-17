@@ -2,7 +2,6 @@ import { useState } from 'react'
 import DatePickerInput from './DatePickerInput'
 
 const Storage = () => {
-    // const [tanggal, setTanggal] = useState('')
     const [namaBarang, setNamaBarang] = useState('')
     const [hargaSatuan, setHargaSatuan] = useState('')
     const [jumlah, setJumlah] = useState('')
@@ -35,22 +34,12 @@ const Storage = () => {
 		setItems([...items, newItem])
 
 		// RESET FORM INPUT, SETELAH MENAMBAHKAN ITEM BARU KE DALAM ARAY ITEMS
-		// setTanggal('')
 		setNamaBarang('')
 		setHargaSatuan('')
 		setJumlah('')
 	}
 
-
 	// UNTUK MENGHAPUS 1 ITEM
-	/*
-	const handleDelete = (index) => {
-		const updatedItems = [...items]
-		updatedItems.splice(index, 1)
-		setItems(updatedItems)
-	}
-	*/
-
 	const handleDelete = (id) => {
 		const updatedItems = items.filter((item) => item.id !== id)
 		setItems(updatedItems)
