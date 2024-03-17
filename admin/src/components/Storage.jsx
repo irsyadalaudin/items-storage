@@ -2,12 +2,11 @@ import { useState } from 'react'
 import DatePickerInput from './DatePickerInput'
 
 const Storage = () => {
-    const [tanggal, setTanggal] = useState('')
+    // const [tanggal, setTanggal] = useState('')
     const [namaBarang, setNamaBarang] = useState('')
     const [hargaSatuan, setHargaSatuan] = useState('')
     const [jumlah, setJumlah] = useState('')
 	const [items, setItems] = useState([])
-	// const [selectedDate, setSelectedDate] = useState('')
 	const [selectedDate, setSelectedDate] = useState(new Date())    // INISIALISASI selectedDate DENGAN TANGGAL SAAT INI
 
 	const handleDateChange = (date) => {
@@ -19,13 +18,15 @@ const Storage = () => {
 
 		// MEMBUAT OBJEK BARU UNTUK ITEM YANG DIINPUT
 		const newItem = {
+			id: Date.now(),			   // MENGGUNAKAN id UNIK DI SETIAP ITEM
 			tanggal : selectedDate,    // MENGGUNAKAN selectedDate SEBAGAI TANGGAL
 			namaBarang,
 			hargaSatuan,
 			jumlah
 		}
 
-		console.log('Tanggal:', tanggal)
+		console.log('ID:', newItem.id)
+		console.log('Tanggal:', selectedDate)    // MENG-console.log NYA JUGA PAKAI selectedDate
         console.log('Nama Barang:', namaBarang)
         console.log('Harga Satuan:', hargaSatuan)
         console.log('Jumlah:', jumlah)
@@ -34,7 +35,7 @@ const Storage = () => {
 		setItems([...items, newItem])
 
 		// RESET FORM INPUT, SETELAH MENAMBAHKAN ITEM BARU KE DALAM ARAY ITEMS
-		setTanggal('')
+		// setTanggal('')
 		setNamaBarang('')
 		setHargaSatuan('')
 		setJumlah('')
@@ -42,9 +43,16 @@ const Storage = () => {
 
 
 	// UNTUK MENGHAPUS 1 ITEM
+	/*
 	const handleDelete = (index) => {
 		const updatedItems = [...items]
 		updatedItems.splice(index, 1)
+		setItems(updatedItems)
+	}
+	*/
+
+	const handleDelete = (id) => {
+		const updatedItems = items.filter((item) => item.id !== id)
 		setItems(updatedItems)
 	}
 
@@ -93,15 +101,15 @@ const Storage = () => {
 
 			{/* MENAMPILKAN DATA BARANG */}
 			<div>
-				{items.map((item, index) => (
+				{items.map((item) => (
 					<>
-						<ul key={index}>
-							{/* <li>{item.tanggal}</li> */}
+						<ul key={item.id}>
 							<li>{item.tanggal.toLocaleString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric'})}</li>    {/* MENGGUNALAN toLocaleString() LANGSUNG PADA selectedDate */}
 							<li>{item.namaBarang}</li>
 							<li>{item.hargaSatuan}</li>
 							<li>{item.jumlah}</li>
-							<button onClick={() => handleDelete(index)}>delete</button>
+							<button>edit</button>
+							<button onClick={() => handleDelete(item.id)}>delete</button>
 						</ul>
 						<button onClick={() => handleDeleteAll()}>delete All</button>
 					</>
