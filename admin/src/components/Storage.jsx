@@ -12,6 +12,7 @@ const Storage = () => {
 		setSelectedDate(date)
 	}
 
+	// UNTUK MENAMBAHKAN ITEM
 	const handleSubmit = (e) => {
 		e.preventDefault()    // MENCEGAH RELOAD HALAMAN
 
