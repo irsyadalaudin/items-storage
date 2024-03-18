@@ -7,7 +7,10 @@ const Storage = () => {
     const [jumlah, setJumlah] = useState('')
 	const [items, setItems] = useState([])
 	const [selectedDate, setSelectedDate] = useState(new Date())    // INISIALISASI selectedDate DENGAN TANGGAL SAAT INI
+	const [editId, setEditId] = useState()
+	const [editValues, setEditValues] = useState({})
 
+	// UNTUK MERUBAH TANGGAL MENGGUNAKAN DatePicker
 	const handleDateChange = (date) => {
 		setSelectedDate(date)
 	}
@@ -51,6 +54,18 @@ const Storage = () => {
 		setItems([])
 	}
 
+	const handleEdit = (id, item) => {
+		setEditId(id)
+		setEditValues(item)
+	}
+
+	const handleSaveAfterEdit = () => {
+		const updatedItems = items.map((item) => item.id === editId ? { ...item, ...editValues } : item)
+		setItems(updatedItems)
+		setEditId()
+		setEditValues({})
+	}
+
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -71,7 +86,7 @@ const Storage = () => {
                 <div>
                     <label htmlFor='Harga Satuan'>Harga Satuan:</label>
                     <input 
-						type='text' 
+						type='number' 
 						value={hargaSatuan} 
 						onChange={(e) => setHargaSatuan(e.target.value)} 
 					/>
@@ -94,11 +109,49 @@ const Storage = () => {
 				{items.map((item) => (
 					<div key={item.id}>
 						<ul>
-							<li>{item.tanggal.toLocaleString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric'})}</li>    {/* MENGGUNALAN toLocaleString() LANGSUNG PADA selectedDate */}
-							<li>{item.namaBarang}</li>
-							<li>{item.hargaSatuan}</li>
-							<li>{item.jumlah}</li>
-							<button>edit</button>
+							{/* MEMBUAT if-else statement, UNTUK MENGECEK APAKAH editId SAMA DENGAN === item.id */}
+							{/* if `true`=, MAKA FUNGSI handleEdit AKAN BERJALAN DAN BISA MENGEDIT tanggal, namaBarang, hargaSatuan, jumlah */}
+							{editId === item.id ? (
+								<>
+									<li>
+										<DatePickerInput
+											selectedDate={selectedDate}
+											handleDateChange={handleDateChange}
+										/>
+									</li>
+									<li>
+										<input
+											type='text' 
+											value={editValues.namaBarang}
+											onChange={(e) => setEditValues({ ...editValues, namaBarang: e.target.value })}
+										/>
+									</li>
+									<li>
+										<input 
+											type='number'
+											value={editValues.hargaSatuan}
+											onChange={(e) => setEditValues({ ...editValues, hargaSatuan: e.target.value })}
+											/>
+									</li>
+									<li>
+										<input 
+											type='number'
+											value ={editValues.jumlah}
+											onChange={(e) => setEditValues({ ...editValues, jumlah: e.target.value })}
+										/>
+									</li>
+									<button onClick={handleSaveAfterEdit}>save</button>
+								</>
+								) : (
+								/* ELSE if `false`= MAKA DISPLAY HANYA AKAN MEMUNCULKAN KEEMPAT items TADI */
+								<>
+									<li>{item.tanggal.toLocaleString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric'})}</li>   {/* } MENGGUNAKAN toLocaleString() LANGSUNG PADA selectedDate */}
+									<li>{item.namaBarang}</li>
+									<li>{item.hargaSatuan}</li>
+									<li>{item.jumlah}</li>
+									<button onClick={() => handleEdit(item.id, item)}>edit</button>
+								</>
+							)}
 							<button onClick={() => handleDelete(item.id)}>delete</button>
 						</ul>
 						<button onClick={() => handleDeleteAll()}>delete All</button>
