@@ -10,7 +10,7 @@ const DatePickerInput = () => {
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             dateFormat='dd/MM/yyyy'
-            filterDate={date => date.getDate() != 5}
+            // filterDate={date => date.getDate() != 5}
             showYearDropdown
             showMonthDropdown
         />
