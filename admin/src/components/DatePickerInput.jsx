@@ -1,11 +1,19 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
-const DatePickerInput = () => {
-    const [startDate, setStartDate] = useState(new Date())
+const DatePickerInput = ({ selectedDate, handleDateChange }) => {
 
     return (
+        <DatePicker 
+            selected={selectedDate}
+            // onSelect={handleDateChange}
+            onChange={handleDateChange}
+            dateFormat='dd/MM/YYYY'
+            showYearDropdown
+            showMonthDropdown
+        />
+        /*
         <DatePicker
             selected={startDate}
             onChange={(date) => setStartDate(date)}
@@ -14,6 +22,7 @@ const DatePickerInput = () => {
             showYearDropdown
             showMonthDropdown
         />
+        */
     )
 }
 
