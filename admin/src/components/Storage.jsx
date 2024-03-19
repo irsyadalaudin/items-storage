@@ -145,8 +145,7 @@ const Storage = () => {
 								) : (
 								/* ELSE if `false`= MAKA DISPLAY HANYA AKAN MEMUNCULKAN KEEMPAT items TADI */
 								<>
-									{/* <li>{item.tanggal.toLocaleString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric'})}</li>   } MENGGUNAKAN toLocaleString() LANGSUNG PADA selectedDate */}
-									<li>{item.tanggal.toLocaleString('en-GB', { day:'2-digit', month:'2-digit', year:'numeric' })}</li>
+									<li>{item.tanggal.toLocaleString('en-GB', { day:'2-digit', month:'2-digit', year:'numeric' })}</li>  {/*MENGGUNAKAN toLocaleString() LANGSUNG PADA tanggal DAN MENGGUNAKAN 'en-GB' UNTUK MEMUNCULKAN dd/MM/YYYY ALIH-ALIH 'en-US'*/}
 									<li>{item.namaBarang}</li>
 									<li>{item.hargaSatuan}</li>
 									<li>{item.jumlah}</li>
