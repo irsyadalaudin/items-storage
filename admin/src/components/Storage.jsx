@@ -166,8 +166,9 @@ const Storage = () => {
 						</ul>
 					</div>
 				))}
+				{/* MEMBUAT BUTTON delete all DI PALING BAWAH SELURUH items */}
 				{items.length > 0 && (
-					<button onClick={() => handleDeleteAll()}>delete All</button>
+					<button onClick={() => handleDeleteAll()}>delete all</button>
 				)}
 			</>
         </>
