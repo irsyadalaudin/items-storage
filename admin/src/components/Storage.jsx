@@ -60,7 +60,7 @@ const Storage = () => {
 	}
 
 	const handleSaveAfterEdit = () => {
-		const updatedItems = items.map((item) => item.id === editId ? { ...item, ...editValues, tanggal: selectedDate } : item)  // MENAMBAHKAN `tanggal: selectedDate` KE DALAM OBJEK `editValues` AGAR TANGGAL BISA BERUBAH SETELAH PENGEDITAN
+		const updatedItems = items.map((item) => item.id === editId ? { ...item, ...editValues } : item)
 		setItems(updatedItems)
 		setEditId()
 		setEditValues({})
@@ -145,7 +145,7 @@ const Storage = () => {
 								) : (
 								/* ELSE if `false`= MAKA DISPLAY HANYA AKAN MEMUNCULKAN KEEMPAT items TADI */
 								<>
-									<li>{item.tanggal.toLocaleString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' })}</li>  {/*MENGGUNAKAN toLocaleString() LANGSUNG PADA tanggal DAN MENGGUNAKAN 'en-GB' UNTUK MEMUNCULKAN dd/MM/YYYY ALIH-ALIH 'en-US'*/}
+									<li>{item.tanggal.toLocaleString('en-GB', { day:'2-digit', month:'2-digit', year:'numeric' })}</li>  {/*MENGGUNAKAN toLocaleString() LANGSUNG PADA tanggal DAN MENGGUNAKAN 'en-GB' UNTUK MEMUNCULKAN dd/MM/YYYY ALIH-ALIH 'en-US'*/}
 									<li>{item.namaBarang}</li>
 									<li>{item.hargaSatuan}</li>
 									<li>{item.jumlah}</li>
