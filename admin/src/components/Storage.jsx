@@ -164,9 +164,11 @@ const Storage = () => {
 							)}
 							<button onClick={() => handleDelete(item.id)}>delete</button>
 						</ul>
-						<button onClick={() => handleDeleteAll()}>delete All</button>
 					</div>
 				))}
+				{items.length > 0 && (
+					<button onClick={() => handleDeleteAll()}>delete All</button>
+				)}
 			</>
         </>
 	)
