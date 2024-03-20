@@ -66,6 +66,12 @@ const Storage = () => {
 		setEditValues({})
 	}
 
+	const handleEnterAfterEdit = (e) => {
+		if (e.key === 'Enter') {
+			handleSaveAfterEdit()
+		}
+	}
+
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -117,6 +123,7 @@ const Storage = () => {
 										<DatePickerInput
 											selectedDate={selectedDate}
 											handleDateChange={handleDateChange}
+											onKeyDown={handleEnterAfterEdit}
 										/>
 									</li>
 									<li>
@@ -124,6 +131,7 @@ const Storage = () => {
 											type='text' 
 											value={editValues.namaBarang}
 											onChange={(e) => setEditValues({ ...editValues, namaBarang: e.target.value })}
+											onKeyDown={handleEnterAfterEdit}
 										/>
 									</li>
 									<li>
@@ -131,6 +139,7 @@ const Storage = () => {
 											type='number'
 											value={editValues.hargaSatuan}
 											onChange={(e) => setEditValues({ ...editValues, hargaSatuan: e.target.value })}
+											onKeyDown={handleEnterAfterEdit}
 											/>
 									</li>
 									<li>
@@ -138,6 +147,7 @@ const Storage = () => {
 											type='number'
 											value ={editValues.jumlah}
 											onChange={(e) => setEditValues({ ...editValues, jumlah: e.target.value })}
+											onKeyDown={handleEnterAfterEdit}
 										/>
 									</li>
 									<button onClick={handleSaveAfterEdit}>save</button>
