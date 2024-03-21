@@ -120,11 +120,6 @@ const Storage = () => {
 							{editId === item.id ? (
 								<>
 									<li>
-										{/* <DatePickerInput
-											selectedDate={selectedDate}
-											handleDateChange={handleDateChange}
-											onKeyDown={handleEnterAfterEdit}
-										/> */}
 										{/* MEMAKAI editValues.tanggal AGAR NILAI TANGGAL YANG DIPILIH SAAT MENGEDIT DISIMPAN DALAM editValues DAN TIDAK DIPENGARUHI OLEH selectedDate DI LUAR LOOP */}
 										<DatePickerInput
 											selectedDate={editValues.tanggal}
