@@ -22,7 +22,7 @@ const Storage = () => {
 		// MEMBUAT OBJEK BARU UNTUK ITEM YANG DIINPUT
 		const newItem = {
 			id: Date.now(),			   // MENGGUNAKAN id UNIK DI SETIAP ITEM
-			tanggal : selectedDate,    // MENGGUNAKAN selectedDate SEBAGAI TANGGAL
+			tanggal : selectedDate.toLocaleString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }),    // MENGGUNAKAN selectedDate SEBAGAI TANGGAL DENGAN FORMAT dd/MM/YYYY
 			namaBarang,
 			hargaSatuan,
 			jumlah
