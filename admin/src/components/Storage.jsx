@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import DatePickerInput from './DatePickerInput'
 
 const Storage = () => {
@@ -34,8 +34,11 @@ const Storage = () => {
         console.log('Harga Satuan:', hargaSatuan)
         console.log('Jumlah:', jumlah)
 
-		// MENAMBAHKAN ITEM BARU KE DALAM ARRAY ITEMS
-		setItems([...items, newItem])
+		// MENAMBAHKAN ITEM BARU KE DALAM ARRAY ITEMS   // DAN MEMASUKANNYA KE DALAM localStorage
+		// setItems([...items, newItem])
+		const updatedItems = [...items, newItem]
+		setItems(updatedItems)
+		localStorage.setItem('items', JSON.stringify(updatedItems))
 
 		// RESET FORM INPUT, SETELAH MENAMBAHKAN ITEM BARU KE DALAM ARAY ITEMS
 		setNamaBarang('')
@@ -47,12 +50,22 @@ const Storage = () => {
 	const handleDelete = (id) => {
 		const updatedItems = items.filter((item) => item.id !== id)
 		setItems(updatedItems)
+		localStorage.setItem('items', JSON.stringify(updatedItems))
 	}
 
 	// UNTUK MENGHAPUS SELURUH ITEM
 	const handleDeleteAll = () => {
 		setItems([])
+		localStorage.removeItem('items')
 	}
+
+	// useEffect UNTUK MENGAMBIL items DI localStorage UNTUK AGAR BISA DI EDIT
+	useEffect(() => {
+		const storedItems = localStorage.getItem('items')
+		if (storedItems) {
+			setItems(JSON.parse(storedItems))
+		}
+	}, [])
 
 	const handleEdit = (id, item) => {
 		setEditId(id)
@@ -62,6 +75,7 @@ const Storage = () => {
 	const handleSaveAfterEdit = () => {
 		const updatedItems = items.map((item) => item.id === editId ? { ...item, ...editValues } : item)
 		setItems(updatedItems)
+		localStorage.setItem('items', JSON.stringify(updatedItems))  // MENYIMPAN PERUBAHAN ITEMS YANG HABIS DI EDIT KE localStorage
 		setEditId()
 		setEditValues({})
 	}
