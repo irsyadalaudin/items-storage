@@ -7,7 +7,7 @@ const DatePickerInput = ({ selectedDate, handleDateChange }) => {
         <DatePicker 
             selected={selectedDate}
             onChange={handleDateChange}
-            dateFormat='dd/MM/YYYY'
+            dateFormat='dd/MM/yyyy'
             showYearDropdown
             showMonthDropdown
         />
