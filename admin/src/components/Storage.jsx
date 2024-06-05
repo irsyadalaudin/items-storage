@@ -22,7 +22,7 @@ const Storage = () => {
 		// MEMBUAT OBJEK BARU UNTUK ITEM YANG DIINPUT
 		const newItem = {
 			id: Date.now(),			   // MENGGUNAKAN id UNIK DI SETIAP ITEM
-			tanggal : selectedDate.toLocaleString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }),    // MENGGUNAKAN selectedDate SEBAGAI TANGGAL DENGAN FORMAT dd/MM/YYYY
+			tanggal : selectedDate,    // MENGGUNAKAN selectedDate SEBAGAI TANGGAL DENGAN FORMAT dd/MM/YYYY
 			namaBarang,
 			hargaSatuan,
 			jumlah
@@ -86,6 +86,14 @@ const Storage = () => {
 		}
 	}
 
+	// MENGGUNAKAN FUNGSI formatDate UNTUK MENETAPKAN FORMAT dd/MM/yyy KETIKA HALAMAN DI-RELOAD
+	const formatDate = (date) => {
+		const day = date.getDate().toString().padStart(2, '0')
+		const month = (date.getMonth()+ 1).toString().padStart(2, '0')
+		const year = date.getFullYear()
+		return`${day}/${month}/${year}`
+	}
+
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -94,7 +102,6 @@ const Storage = () => {
 					selectedDate={selectedDate}
 					handleDateChange={handleDateChange}
 				/>
-
                 <div>
                     <label htmlFor='Nama Barang'>Nama barang:</label>
                     <input 
@@ -136,7 +143,7 @@ const Storage = () => {
 									<li>
 										{/* MEMAKAI editValues.tanggal AGAR NILAI TANGGAL YANG DIPILIH SAAT MENGEDIT DISIMPAN DALAM editValues DAN TIDAK DIPENGARUHI OLEH selectedDate DI LUAR LOOP */}
 										<DatePickerInput
-											selectedDate={editValues.tanggal}
+											selectedDate={(editValues.tanggal)}
 											handleDateChange={(date) => setEditValues({ ...editValues, tanggal: date })}
 											onKeyDown={handleEnterAfterEdit}
 										/>
@@ -170,7 +177,8 @@ const Storage = () => {
 								) : (
 								/* ELSE if `false`= MAKA DISPLAY HANYA AKAN MEMUNCULKAN KEEMPAT items TADI */
 								<>
-									<li>{item.tanggal.toLocaleString('en-GB', { day:'2-digit', month:'2-digit', year:'numeric' })}</li>  {/*MENGGUNAKAN toLocaleString() LANGSUNG PADA tanggal DAN MENGGUNAKAN 'en-GB' UNTUK MEMUNCULKAN dd/MM/YYYY ALIH-ALIH 'en-US'*/}
+									{/* <li>{item.tanggal.toLocaleString('en-GB', { day:'2-digit', month:'2-digit', year:'numeric' })}</li>  MENGGUNAKAN toLocaleString() LANGSUNG PADA tanggal DAN MENGGUNAKAN 'en-GB' UNTUK MEMUNCULKAN dd/MM/YYYY ALIH-ALIH 'en-US' */}
+									<li>{formatDate(new Date(item.tanggal))}</li>  {/* FORMAT TANGGAL MENGGUNAKAN FUNGSI formatDate */}
 									<li>{item.namaBarang}</li>
 									<li>{item.hargaSatuan}</li>
 									<li>{item.jumlah}</li>
