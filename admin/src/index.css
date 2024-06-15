@@ -23,7 +23,10 @@ body {
     margin : 0;
 	padding: 0;
 	/* background: url('assets/bg.jpg'); */
-	background-color: rgb(168 162 158);
+	/* background-color: rgb(168 162 158); */
+	background-color: #0d6efd;
+	background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)), linear-gradient(180deg, #0d6efd, #0d6efd)
+	/* background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)), linear-gradient(180deg, #0d6efd, #0d6efd); */
 }
 
 /* @media (prefers-color-scheme: light) {
