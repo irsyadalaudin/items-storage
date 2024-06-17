@@ -5,7 +5,7 @@ import Storage from './components/Storage'
 
 const App = () => {
 		return (
-			<div className='px-28'>
+			<div>
 				<Navbar />
 				<Home />
 				<Storage />
