@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <nav className='bg-primary fixed top-0'>
-            <div className='flex flex-wrap items-center justify-between mt-4'>
-                <img className='' src={navLogo} alt={'nav-logo'} />
+        <nav className='flex flex-row items-center justify-between sticky top-0 mt-4 px-28'>
+            <div>
+                <img src={navLogo} alt={'nav-logo'} />
+            </div>
 
-                <div className=''>
-                    <Link to='/'>Beranda</Link>
-                    <Link to='/'>Penyimpanan barang</Link>
-                </div>
+            <div className='flex gap-4'>
+                <Link to='/' className='no-underline'>Beranda</Link>
+                <Link to='/' className='no-underline'>Penyimpanan barang</Link>
             </div>
         </nav>
     )
