@@ -96,14 +96,17 @@ const Storage = () => {
 
     return (
         <div className='px-28'>
-            <form className='flex flex-col gap-3' onSubmit={handleSubmit}>
-                <h2>Data barang masuk</h2>
-				<DatePickerInput
-					selectedDate={selectedDate}
-					handleDateChange={handleDateChange}
-				/>
+            <form className='flex flex-col gap-3 bg-cyan-600 p-5 rounded-lg' onSubmit={handleSubmit}>
+                <h2 className='m-0 p-0'>Data barang masuk</h2>
+				<div>
+					<label htmlFor='date'>Label: </label>
+					<DatePickerInput
+						selectedDate={selectedDate}
+						handleDateChange={handleDateChange}
+					/>
+				</div>
                 <div>
-                    <label htmlFor='Nama Barang'>Nama barang:</label>
+                    <label htmlFor='Nama Barang'>Nama barang :</label>
                     <input 
 						type='text' 
 						value={namaBarang} 
@@ -111,7 +114,7 @@ const Storage = () => {
 					/>
                 </div>
                 <div>
-                    <label htmlFor='Harga Satuan'>Harga Satuan:</label>
+                    <label htmlFor='Harga Satuan'>Harga Satuan :</label>
                     <input 
 						type='number' 
 						value={hargaSatuan} 
@@ -119,7 +122,7 @@ const Storage = () => {
 					/>
                 </div>
                 <div>
-                    <label htmlFor='Jumlah'>Jumlah:</label>
+                    <label htmlFor='Jumlah'>Jumlah :</label>
                     <input 
 						type='number' 
 						value={jumlah} 

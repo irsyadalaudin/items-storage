@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <nav className='flex flex-row items-center justify-between sticky top-0 pt-4 px-28'>
+        <nav className='flex flex-row items-center justify-between sticky top-0 z-10 px-28 bg-cyan-600'>
             <div>
-                <img src={navLogo} alt={'nav-logo'} />
+                <img className='mt-1' src={navLogo} alt={'nav-logo'} />
             </div>
 
             <div className='flex gap-4'>
