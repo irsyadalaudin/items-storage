@@ -95,8 +95,8 @@ const Storage = () => {
 	}
 
     return (
-        <>
-            <form onSubmit={handleSubmit}>
+        <div className='px-28'>
+            <form className='flex flex-col gap-3' onSubmit={handleSubmit}>
                 <h2>Data barang masuk</h2>
 				<DatePickerInput
 					selectedDate={selectedDate}
@@ -194,7 +194,7 @@ const Storage = () => {
 					<button onClick={() => handleDeleteAll()}>delete all</button>
 				)}
 			</>
-        </>
+        </div>
 	)
 }
 
