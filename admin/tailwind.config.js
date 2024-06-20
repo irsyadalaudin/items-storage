@@ -9,6 +9,7 @@ export default {
 			spacing: {
 				'14.5': '58px',
 				'15': '62px',
+				'18': '67px',
 				'90': '92.5vh'
 			},
 			colors: {

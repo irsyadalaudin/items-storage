@@ -32,6 +32,11 @@ body {
 	min-height: 100vh;
 }
 
+/* .home-container {
+	background: url('assets/home.jpg') no-repeat center center;
+	background-size: cover;
+} */
+
 /* @media (prefers-color-scheme: light) {
 	:root {
 		color: #213547;
