@@ -96,12 +96,13 @@ const Storage = () => {
 
     return (
         <div className='flex justify-center px-28 text-lg'>
-            <form onSubmit={handleSubmit} className='flex gap-3 gap-x-4 bg-[#F3F4F6] p-5 mb-10 rounded-b-md shadow-lg absolute top-560 w-1000 z-8'>
+            <form onSubmit={handleSubmit} className='flex gap-3 gap-x-4 bg-[#F3F4F6] p-5 mb-10 rounded-b-md rounded-tr-md shadow-lg absolute top-560 w-1000 z-8'>
 			<button className='absolute h-10 bottom-960 left-0 z-9 bg-[#F3F4F6] text-black rounded-t-md border-none' disabled>Data Barang Masuk</button>
                 {/* <h2 className='m-0 p-0'>Data barang masuk</h2> */}
 				<div>
 					<label className='mr-15' htmlFor='date'>Tanggal :</label>
 					<DatePickerInput
+						className='rounded'
 						selectedDate={selectedDate}
 						handleDateChange={handleDateChange}
 					/>
@@ -109,6 +110,7 @@ const Storage = () => {
                 <div>
                     <label className='mr-4' htmlFor='Nama Barang'>Nama barang :</label>
                     <input 
+						className='rounded'
 						type='text' 
 						value={namaBarang} 
 						onChange={(e) => setNamaBarang(e.target.value)} 
@@ -116,7 +118,8 @@ const Storage = () => {
                 </div>
                 <div>
                     <label className='mr-4' htmlFor='Harga Satuan'>Harga Satuan :</label>
-                    <input 
+                    <input
+						className='rounded'
 						type='number' 
 						value={hargaSatuan} 
 						onChange={(e) => setHargaSatuan(e.target.value)} 
@@ -124,7 +127,8 @@ const Storage = () => {
                 </div>
                 <div>
                     <label className='mr-18' htmlFor='Jumlah'>Jumlah :</label>
-                    <input 
+                    <input
+						className='rounded'
 						type='number' 
 						value={jumlah} 
 						onChange={(e) => setJumlah(e.target.value)} 
