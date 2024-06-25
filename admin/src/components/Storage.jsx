@@ -95,9 +95,10 @@ const Storage = () => {
 	}
 
     return (
-        <div className='px-28 text-lg'>
-            <form className='flex flex-col gap-3 gap-x-4 bg-cyan-600 p-5 rounded-lg' onSubmit={handleSubmit}>
-                <h2 className='m-0 p-0'>Data barang masuk</h2>
+        <div className='flex justify-center px-28 text-lg'>
+            <form onSubmit={handleSubmit} className='flex gap-3 gap-x-4 bg-[#F3F4F6] p-5 mb-10 rounded-b-md shadow-lg absolute top-560 w-1000 z-8'>
+			<button className='absolute h-10 bottom-960 left-0 z-9 bg-[#F3F4F6] text-black rounded-t-md border-none' disabled>Data Barang Masuk</button>
+                {/* <h2 className='m-0 p-0'>Data barang masuk</h2> */}
 				<div>
 					<label className='mr-15' htmlFor='date'>Tanggal :</label>
 					<DatePickerInput
