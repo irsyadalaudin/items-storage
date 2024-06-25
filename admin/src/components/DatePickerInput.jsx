@@ -1,10 +1,11 @@
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
-const DatePickerInput = ({ selectedDate, handleDateChange }) => {
+const DatePickerInput = ({ className, selectedDate, handleDateChange }) => {
 
     return (
-        <DatePicker 
+        <DatePicker
+            className={className}
             selected={selectedDate}
             onChange={handleDateChange}
             dateFormat='dd/MM/yyyy'
