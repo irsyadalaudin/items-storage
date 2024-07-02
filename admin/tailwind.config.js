@@ -21,6 +21,11 @@ export default {
 				'navbar-color': '#18353B',
 				'form-color': '#DE5623'
 			},
+			boxShadow: {
+				// 'right-bottom-left': '35px 10px 30px -20px rgba(0, 0, 0, 0.3), -35px 10px 30px -20px rgba(0, 0, 0, 0.3)',
+				// 'right-bottom-left': '30px 10px 30px -20px rgba(0, 0, 0, 0.3)',
+				'right-bottom-left': '5px 5px 10px -5px rgba(0, 0, 0, 0.3), -5px 0px 10px -5px rgba(0, 0, 0, 0.3)',
+			},
 		},
 	},
 	plugins: [],
