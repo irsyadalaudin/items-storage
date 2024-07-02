@@ -101,7 +101,7 @@ const Storage = () => {
                 {/* <h2 className='m-0 p-0'>Data barang masuk</h2> */}
 				<div>
 					<DatePickerInput
-						className='rounded'
+						className='rounded pl-2'
 						placeholder='Date :'
 						selectedDate={selectedDate}
 						handleDateChange={handleDateChange}
@@ -109,7 +109,7 @@ const Storage = () => {
 				</div>
 				<div>
 					<input 
-						className='rounded'
+						className='rounded pl-2'
 						type='text' 
 						placeholder='Nama Barang :'
 						value={namaBarang} 
@@ -118,7 +118,7 @@ const Storage = () => {
 				</div>
 				<div>
 					<input
-						className='rounded'
+						className='rounded pl-2'
 						type='number' 
 						placeholder='Harga Satuan :'
 						value={hargaSatuan} 
@@ -127,7 +127,7 @@ const Storage = () => {
 				</div>
 				<div>
 					<input
-						className='rounded'
+						className='rounded pl-2'
 						type='number' 
 						placeholder='Jumlah Barang :'
 						value={jumlah} 
