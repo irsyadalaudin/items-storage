@@ -96,11 +96,11 @@ const Storage = () => {
 
     return (
         <div className='flex justify-center px-28 text-lg'>
-            <form onSubmit={handleSubmit} className='flex justify-around bg-[#F3F4F6] p-5 mb-10 rounded-b-md rounded-tr-md shadow-right-bottom-left absolute top-560 w-1000 z-8 '>
-			<button className='absolute h-10 bottom-960 left-0 z-9 bg-[#F3F4F6] text-black rounded-t-md border-none' disabled>Data Barang Masuk</button>
+            <form onSubmit={handleSubmit} className='flex justify-around bg-[#F3F4F6] p-5 mb-10 rounded-b-md rounded-tr-md shadow-right-bottom-left absolute top-560 w-1000 z-8'>
+				<button className='absolute h-10 bottom-960 left-0 z-9 bg-[#F3F4F6] text-black rounded-t-md border-none' disabled>Data Barang Masuk</button>
                 {/* <h2 className='m-0 p-0'>Data barang masuk</h2> */}
 				<DatePickerInput
-					className='rounded pl-2'
+					className='rounded p-2'
 					selectedDate={selectedDate}
 					handleDateChange={handleDateChange}
 				/>
