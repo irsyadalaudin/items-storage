@@ -96,7 +96,8 @@ const Storage = () => {
 
     return (
         <div className='flex justify-center px-28 text-lg'>
-            {/* FORM DATA BARANG */}
+
+            {/* 1. FORM DATA BARANG */}
             <form onSubmit={handleSubmit} className='flex justify-around bg-[#F3F4F6] p-5 mb-10 rounded-b-md rounded-tr-md shadow-right-bottom-left absolute top-560 w-1000 z-8'>
 				<button className='absolute h-10 bottom-960 left-0 z-9 bg-[#F3F4F6] text-black rounded-t-md border-none' disabled>Data Barang Masuk</button>
 				<DatePickerInput
@@ -130,7 +131,7 @@ const Storage = () => {
                 </div>
             </form>
 
-			{/* MENAMPILKAN DATA BARANG */}
+			{/* 2. MENAMPILKAN DATA BARANG */}
 			<div className='flex flex-wrap'>
 				{items.map((item) => (
 					<div className='mt-14' key={item.id}>
@@ -184,13 +185,14 @@ const Storage = () => {
 									<button onClick={() => handleEdit(item.id, item)}>edit</button>
 								</>
 							)}
-							<button onClick={() => handleDelete(item.id)}>delete</button>
+							<button className='rounded' onClick={() => handleDelete(item.id)}>delete</button>
 						</ul>
 					</div>
 				))}
-				{/* MEMBUAT BUTTON delete all DI PALING BAWAH SELURUH items */}
+
+				{/* 3. MEMBUAT BUTTON delete all DI PALING BAWAH SELURUH items */}
 				{items.length > 0 && (
-					<button onClick={() => handleDeleteAll()}>delete all</button>
+					<button className='mt-24 h-20 rounded' onClick={() => handleDeleteAll()}>delete all</button>
 				)}
 			</div>
         </div>
