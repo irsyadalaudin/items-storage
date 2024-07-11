@@ -131,9 +131,9 @@ const Storage = () => {
             </form>
 
 			{/* MENAMPILKAN DATA BARANG */}
-			<div>
+			<div className='flex flex-wrap'>
 				{items.map((item) => (
-					<div key={item.id}>
+					<div className='mt-14' key={item.id}>
 						<ul>
 							{/* MEMBUAT if-else statement, UNTUK MENGECEK APAKAH editId SAMA DENGAN === item.id */}
 							{/* if `true`=, MAKA FUNGSI handleEdit AKAN BERJALAN DAN BISA MENGEDIT tanggal, namaBarang, hargaSatuan, jumlah */}
