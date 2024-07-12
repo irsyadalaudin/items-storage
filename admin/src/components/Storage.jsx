@@ -133,7 +133,7 @@ const Storage = () => {
 
 			{/* 2. MENAMPILKAN DATA BARANG */}
 			{/* <div className='flex flex-wrap'> */}
-			<div className='grid grid-cols-5 gap-4'>
+			<div className='grid grid-cols-5 gap-6'>
 				{items.map((item) => (
 					<div key={item.id}>
 						<ul>
@@ -193,7 +193,7 @@ const Storage = () => {
 
 				{/* 3. MEMBUAT BUTTON delete all DI PALING BAWAH SELURUH items */}
 				{items.length > 0 && (
-					<button className='mt-24 mb-5 h-20 rounded' onClick={() => handleDeleteAll()}>delete all</button>
+					<button className='rounded mt-10 ml-8 mb-5 h-20' onClick={() => handleDeleteAll()}>delete all</button>
 				)}
 			</div>
         </div>
