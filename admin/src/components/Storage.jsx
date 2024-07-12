@@ -133,7 +133,7 @@ const Storage = () => {
 
 			{/* 2. MENAMPILKAN DATA BARANG */}
 			{/* <div className='flex flex-wrap'> */}
-			<div className='grid grid-cols-4 gap-4'>
+			<div className='grid grid-cols-5 gap-4'>
 				{items.map((item) => (
 					<div className='mt-14' key={item.id}>
 						<ul>
