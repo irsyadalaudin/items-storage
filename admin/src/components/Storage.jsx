@@ -193,7 +193,7 @@ const Storage = () => {
 
 				{/* 3. MEMBUAT BUTTON delete all DI PALING BAWAH SELURUH items */}
 				{items.length > 0 && (
-					<button className='mt-24 h-20 rounded' onClick={() => handleDeleteAll()}>delete all</button>
+					<button className='mt-24 mb-5 h-20 rounded' onClick={() => handleDeleteAll()}>delete all</button>
 				)}
 			</div>
         </div>
