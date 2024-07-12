@@ -183,7 +183,7 @@ const Storage = () => {
 									<li>{item.namaBarang}</li>
 									<li>{item.hargaSatuan}</li>
 									<li>{item.jumlah}</li>
-									<button onClick={() => handleEdit(item.id, item)}>edit</button>
+									<button className='rounded' onClick={() => handleEdit(item.id, item)}>edit</button>
 								</>
 							)}
 							<button className='rounded' onClick={() => handleDelete(item.id)}>delete</button>
