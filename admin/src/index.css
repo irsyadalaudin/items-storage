@@ -27,6 +27,10 @@ body {
 	min-height: 100vh;
 }
 
+h2, h4 {
+	font-family: Roboto, sans-serif;
+}
+
 /* @media (prefers-color-scheme: light) {
 	:root {
 		color: #213547;
