@@ -98,7 +98,7 @@ const Storage = () => {
         <div className='flex justify-center px-28 text-lg'>
 
             {/* 1. FORM DATA BARANG */}
-            <form onSubmit={handleSubmit} className='flex justify-around bg-[#F3F4F6] p-5 mb-10 rounded-b-md rounded-tr-md shadow-right-bottom-left absolute top-560 w-1000 z-8'>
+            <form onSubmit={handleSubmit} className='flex justify-around bg-[#F3F4F6] p-5 rounded-b-md rounded-tr-md shadow-right-bottom-left absolute top-560 w-1000 z-8'>
 				<button className='absolute h-10 bottom-960 left-0 z-9 bg-[#F3F4F6] text-black rounded-t-md border-none' disabled>Data Barang Masuk</button>
 				<DatePickerInput
 					className='rounded p-2'
@@ -135,7 +135,7 @@ const Storage = () => {
 			{/* <div className='flex flex-wrap'> */}
 			<div className='grid grid-cols-5 gap-4'>
 				{items.map((item) => (
-					<div className='mt-14' key={item.id}>
+					<div key={item.id}>
 						<ul>
 							{/* MEMBUAT if-else statement, UNTUK MENGECEK APAKAH editId SAMA DENGAN === item.id */}
 							{/* if `true`=, MAKA FUNGSI handleEdit AKAN BERJALAN DAN BISA MENGEDIT tanggal, namaBarang, hargaSatuan, jumlah */}
